@@ -23,10 +23,8 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
     // Reference: https://carconnectivity.org/
 
     // CCC Digital Key UUID: 0xfff5
+    // Using 16-bit Service UUID with Service Data to stay within 31-byte Legacy BLE limit
     private val _cccServiceUuid16bit = ParcelUuid.fromString("0000fff5-0000-1000-8000-00805f9b34fb")
-
-    // CCC Service Data Intent UUID: 5810bbc0-b499-11e9-a2a3-2a2ae2dbcce4
-    private val _cccServiceDataUuid = ParcelUuid.fromString("5810bbc0-b499-11e9-a2a3-2a2ae2dbcce4")
 
     // Vehicle brand identifiers
     val _vehicleBrands = mapOf(
@@ -65,17 +63,13 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
             advertisementSet.advertiseData.includeDeviceName = false
             advertisementSet.advertiseData.includeTxPower = false
 
-            // Add 16-bit Service UUID (0xfff5)
-            val serviceData16bit = ServiceData()
-            serviceData16bit.serviceUuid = _cccServiceUuid16bit
-            advertisementSet.advertiseData.services.add(serviceData16bit)
-
-            // Add 128-bit Service Data
-            val serviceData128bit = ServiceData()
-            serviceData128bit.serviceUuid = _cccServiceDataUuid
+            // Add 16-bit Service UUID (0xfff5) with Service Data
             // Service Data format: IntentConfiguration (1 byte) + Vehicle Brand Identifier (2+ bytes)
-            serviceData128bit.serviceData = StringHelpers.decodeHex(it.key)
-            advertisementSet.advertiseData.services.add(serviceData128bit)
+            // This keeps the total advertisement size within Legacy BLE 31-byte limit
+            val serviceData = ServiceData()
+            serviceData.serviceUuid = _cccServiceUuid16bit
+            serviceData.serviceData = StringHelpers.decodeHex(it.key)
+            advertisementSet.advertiseData.services.add(serviceData)
 
             // General Data
             advertisementSet.title = it.value
