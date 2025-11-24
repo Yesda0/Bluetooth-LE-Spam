@@ -27,7 +27,7 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
 
     // Custom 128-bit UUID for Service Data (matches Wireshark capture)
     // This UUID is used with AD Type 0x21 (Service Data - 128-bit UUID)
-    private val _cccServiceDataUuid128bit = ParcelUuid.fromString("5818bbc0-b499-11e9-a2a3-2a2ae2dbcce4")
+    private val _cccServiceDataUuid128bit = ParcelUuid.fromString("5810bbc0-b499-11e9-a2a3-2a2ae2dbcce4")
 
     // Vehicle brand identifiers
     val _vehicleBrands = mapOf(
