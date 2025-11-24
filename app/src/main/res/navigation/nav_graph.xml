@@ -69,4 +69,10 @@
         android:name="de.simon.dankelmann.bluetoothlespam.ui.preferences.PreferencesFragment"
         android:label="@string/menu_preferences" />
 
+    <fragment
+        android:id="@+id/nav_hyundai_passive_entry"
+        android:name="de.simon.dankelmann.bluetoothlespam.ui.hyundaiPassiveEntry.HyundaiPassiveEntryFragment"
+        android:label="@string/menu_hyundai_passive_entry"
+        tools:layout="@layout/fragment_hyundai_passive_entry" />
+
 </navigation>

@@ -116,7 +116,8 @@ class MainActivity : AppCompatActivity() {
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
         val menuItems = listOf<MenuItem?>(
             menu?.findItem(R.id.nav_preferences),
-            menu?.findItem(R.id.nav_set_tx_power)
+            menu?.findItem(R.id.nav_set_tx_power),
+            menu?.findItem(R.id.nav_hyundai_passive_entry)
         )
 
         menuItems.forEach { menuItem ->
@@ -157,6 +158,11 @@ class MainActivity : AppCompatActivity() {
 
             R.id.nav_set_tx_power -> {
                 showSetTxPowerDialog()
+            }
+
+            R.id.nav_hyundai_passive_entry -> {
+                val navController = findNavController(R.id.nav_host_fragment)
+                onNavDestinationSelected(item, navController)
             }
         }
 

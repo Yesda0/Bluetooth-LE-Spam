@@ -9,6 +9,7 @@ enum class AdvertisementTarget {
     ADVERTISEMENT_TARGET_IOS,
     ADVERTISEMENT_TARGET_WINDOWS,
     ADVERTISEMENT_TARGET_SAMSUNG,
+    ADVERTISEMENT_TARGET_HYUNDAI,
     ADVERTISEMENT_TARGET_LOVESPOUSE
 }
 
@@ -20,6 +21,7 @@ fun AdvertisementTarget.getDrawableId(): Int {
         AdvertisementTarget.ADVERTISEMENT_TARGET_UNDEFINED -> R.drawable.bluetooth
         AdvertisementTarget.ADVERTISEMENT_TARGET_WINDOWS -> R.drawable.microsoft
         AdvertisementTarget.ADVERTISEMENT_TARGET_KITCHEN_SINK -> R.drawable.shuffle
+        AdvertisementTarget.ADVERTISEMENT_TARGET_HYUNDAI -> R.drawable.bluetooth
         AdvertisementTarget.ADVERTISEMENT_TARGET_LOVESPOUSE -> R.drawable.heart
     }
 }

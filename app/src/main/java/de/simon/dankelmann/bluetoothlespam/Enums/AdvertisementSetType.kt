@@ -18,6 +18,7 @@ enum class AdvertisementSetType {
     ADVERTISEMENT_TYPE_EASY_SETUP_WATCH,
     ADVERTISEMENT_TYPE_EASY_SETUP_BUDS,
     ADVERTISEMENT_TYPE_EASY_SETUP_CCC_PASSIVE_ENTRY,
+    ADVERTISEMENT_TYPE_HYUNDAI_PASSIVE_ENTRY,
     ADVERTISEMENT_TYPE_LOVESPOUSE_PLAY,
     ADVERTISEMENT_TYPE_LOVESPOUSE_STOP
 }
@@ -42,6 +43,8 @@ fun AdvertisementSetType.stringResId(): Int {
         AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_WATCH -> R.string.ad_set_type_easy_setup_watch
         AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_BUDS -> R.string.ad_set_type_easy_setup_buds
         AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_CCC_PASSIVE_ENTRY -> R.string.ad_set_type_easy_setup_ccc_passive_entry
+
+        AdvertisementSetType.ADVERTISEMENT_TYPE_HYUNDAI_PASSIVE_ENTRY -> R.string.ad_set_type_hyundai_passive_entry
 
         AdvertisementSetType.ADVERTISEMENT_TYPE_LOVESPOUSE_PLAY -> R.string.ad_set_type_lovespouse_play
         AdvertisementSetType.ADVERTISEMENT_TYPE_LOVESPOUSE_STOP -> R.string.ad_set_type_lovespouse_stop

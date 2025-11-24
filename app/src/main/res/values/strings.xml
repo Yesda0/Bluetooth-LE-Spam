@@ -56,6 +56,7 @@
     <string name="ad_set_type_easy_setup_buds">Easy Setup Buds</string>
     <string name="ad_set_type_easy_setup_watch">Easy Setup Watch</string>
     <string name="ad_set_type_easy_setup_ccc_passive_entry">CCC Passive Entry (Hyundai)</string>
+    <string name="ad_set_type_hyundai_passive_entry">Hyundai Passive Entry</string>
     <string name="ad_set_type_lovespouse_play">Lovespouse Play</string>
     <string name="ad_set_type_lovespouse_stop">Lovespouse Stop</string>
 
@@ -87,5 +88,20 @@
     <string name="missing_permissions_title">Missing Permissions</string>
     <string name="missing_permissions_text">Some permissions are missing. Without them, Bluetooth LE Spam will not work properly.</string>
     <string name="missing_permissions_grant">Grant Permissions</string>
+
+    <!-- Hyundai Passive Entry -->
+    <string name="menu_hyundai_passive_entry">Hyundai Passive Entry</string>
+    <string name="hyundai_passive_entry_description">Broadcast Hyundai Digital Key (CCC) BLE advertisements for Passive Entry testing. Based on Car Connectivity Consortium protocol.</string>
+    <string name="hyundai_passive_entry_select_variant">Select Service Data Variant</string>
+    <string name="hyundai_passive_entry_default">Default (0100aa)</string>
+    <string name="hyundai_passive_entry_variant1">Variant 1 (010001)</string>
+    <string name="hyundai_passive_entry_variant2">Variant 2 (010002)</string>
+    <string name="hyundai_passive_entry_variant3">Variant 3 (010003)</string>
+    <string name="hyundai_passive_entry_variant4">Variant 4 (0100ff)</string>
+    <string name="hyundai_passive_entry_custom_data">Or Use Custom Service Data</string>
+    <string name="hyundai_passive_entry_custom_hint">e.g., 0100aa</string>
+    <string name="hyundai_passive_entry_start">Start</string>
+    <string name="hyundai_passive_entry_stop">Stop</string>
+    <string name="hyundai_passive_entry_info">Note: This broadcasts BLE advertisements matching the Hyundai Passive Entry protocol using CCC Digital Key UUID (0xfff5) and 128-bit service data. Packet structure verified against Wireshark captures.</string>
 
 </resources>

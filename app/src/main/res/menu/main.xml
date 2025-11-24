@@ -17,5 +17,13 @@
         android:title="@string/action_set_tx_power"
         app:showAsAction="never"
         />
-    
+
+    <item
+        android:visible="true"
+        android:id="@+id/nav_hyundai_passive_entry"
+        android:orderInCategory="300"
+        android:title="@string/menu_hyundai_passive_entry"
+        app:showAsAction="never"
+        />
+
 </menu>
