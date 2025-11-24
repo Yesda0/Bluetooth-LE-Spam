@@ -52,16 +52,19 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
             // Advertise Settings
             advertisementSet.advertiseSettings.advertiseMode = AdvertiseMode.ADVERTISEMODE_LOW_LATENCY
             advertisementSet.advertiseSettings.txPowerLevel = TxPowerLevel.TX_POWER_HIGH
-            advertisementSet.advertiseSettings.connectable = false
+            advertisementSet.advertiseSettings.connectable = true
             advertisementSet.advertiseSettings.timeout = 0
 
             // Advertising Parameters
-            // Using Legacy Mode - data size is now within 31-byte limit after fixing UUID duplication
+            // Using Legacy Mode with ADV_IND (connectable=true, scannable=true)
+            // This ensures the packet type is ADV_IND, not ADV_SCAN_IND
             advertisementSet.advertisingSetParameters.legacyMode = true
             advertisementSet.advertisingSetParameters.interval = AdvertisingSetParameters.INTERVAL_MIN
             advertisementSet.advertisingSetParameters.txPowerLevel = TxPowerLevel.TX_POWER_HIGH
             advertisementSet.advertisingSetParameters.primaryPhy = PrimaryPhy.PHY_LE_1M
             advertisementSet.advertisingSetParameters.secondaryPhy = SecondaryPhy.PHY_LE_1M
+            advertisementSet.advertisingSetParameters.connectable = true
+            advertisementSet.advertisingSetParameters.scanable = true
 
             // AdvertiseData
             advertisementSet.advertiseData.includeDeviceName = false
