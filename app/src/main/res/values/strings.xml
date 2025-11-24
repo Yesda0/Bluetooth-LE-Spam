@@ -55,6 +55,7 @@
     <string name="ad_set_type_swift_pairing">Swift Pairing</string>
     <string name="ad_set_type_easy_setup_buds">Easy Setup Buds</string>
     <string name="ad_set_type_easy_setup_watch">Easy Setup Watch</string>
+    <string name="ad_set_type_easy_setup_ccc_passive_entry">CCC Passive Entry (Hyundai)</string>
     <string name="ad_set_type_lovespouse_play">Lovespouse Play</string>
     <string name="ad_set_type_lovespouse_stop">Lovespouse Stop</string>
 

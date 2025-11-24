@@ -258,7 +258,8 @@ class AdvertisementCollectionFragment : Fragment() {
         navigateToAdvertisementFragmentWithType(
             listOf(
                 AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_WATCH,
-                AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_BUDS
+                AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_BUDS,
+                AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_CCC_PASSIVE_ENTRY
             ), "Easy Setup Collection"
         )
     }
@@ -310,6 +311,7 @@ class AdvertisementCollectionFragment : Fragment() {
 
                 AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_WATCH,
                 AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_BUDS,
+                AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_CCC_PASSIVE_ENTRY,
 
                 AdvertisementSetType.ADVERTISEMENT_TYPE_SWIFT_PAIRING,
 

@@ -11,6 +11,7 @@ import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.Continuity
 import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.ContinuityNewDevicePopUpAdvertisementSetGenerator
 import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.ContinuityNotYourDevicePopUpAdvertisementSetGenerator
 import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.EasySetupBudsAdvertisementSetGenerator
+import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.EasySetupCCCPassiveEntryAdvertisementSetGenerator
 import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.EasySetupWatchAdvertisementSetGenerator
 import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.FastPairDevicesAdvertisementSetGenerator
 import de.simon.dankelmann.bluetoothlespam.AdvertisementSetGenerators.FastPairDebugAdvertisementSetGenerator
@@ -133,6 +134,7 @@ abstract class AppDatabase : RoomDatabase() {
 
                 EasySetupWatchAdvertisementSetGenerator(),
                 EasySetupBudsAdvertisementSetGenerator(),
+                EasySetupCCCPassiveEntryAdvertisementSetGenerator(),
 
                 LovespousePlayAdvertisementSetGenerator(),
                 LovespouseStopAdvertisementSetGenerator()
