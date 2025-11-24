@@ -69,6 +69,10 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
             // AdvertiseData
             advertisementSet.advertiseData.includeDeviceName = false
             advertisementSet.advertiseData.includeTxPower = false
+            // Set BLE Advertisement Flags:
+            // Bit 2 (0x04): BR/EDR Not Supported = true
+            // Bit 1 (0x02): LE General Discoverable Mode = false (not set)
+            advertisementSet.advertiseData.flags = 0x04.toByte()
 
             // Add 16-bit Service UUID (0xfff5) to Service UUID List (without Service Data)
             // This creates AD Type 0x03 (16-bit Service UUID List)
