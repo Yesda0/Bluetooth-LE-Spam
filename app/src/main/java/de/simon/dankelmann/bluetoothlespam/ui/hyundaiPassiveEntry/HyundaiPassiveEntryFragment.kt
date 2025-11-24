@@ -141,7 +141,7 @@ class HyundaiPassiveEntryFragment : Fragment() {
 
         // Queue and start advertising
         val app = (context.applicationContext as BleSpamApplication)
-        app.queueHandler.setAdvertisementQueueMode(AdvertisementQueueMode.ADVERTISEMENT_QUEUE_MODE_LINEAR_LOOP)
+        app.queueHandler.setAdvertisementQueueMode(AdvertisementQueueMode.ADVERTISEMENT_QUEUE_MODE_LINEAR)
         app.queueHandler.setAdvertisementSetCollection(collection)
         app.queueHandler.activate(context)
 
