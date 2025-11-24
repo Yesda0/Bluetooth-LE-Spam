@@ -22,9 +22,12 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
     // CCC (Car Connectivity Consortium) Passive Entry Protocol
     // Reference: https://carconnectivity.org/
 
-    // CCC Digital Key UUID: 0xfff5
-    // Using 16-bit Service UUID with Service Data to stay within 31-byte Legacy BLE limit
+    // CCC Digital Key UUID: 0xfff5 (16-bit, added to Service UUID List)
     private val _cccServiceUuid16bit = ParcelUuid.fromString("0000fff5-0000-1000-8000-00805f9b34fb")
+
+    // Custom 128-bit UUID for Service Data (matches Wireshark capture)
+    // This UUID is used with AD Type 0x21 (Service Data - 128-bit UUID)
+    private val _cccServiceDataUuid128bit = ParcelUuid.fromString("5818bbc0-b499-11e9-a2a3-2a2ae2dbcce4")
 
     // Vehicle brand identifiers
     val _vehicleBrands = mapOf(
@@ -64,13 +67,20 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
             advertisementSet.advertiseData.includeDeviceName = false
             advertisementSet.advertiseData.includeTxPower = false
 
-            // Add 16-bit Service UUID (0xfff5) with Service Data
+            // Add 16-bit Service UUID (0xfff5) to Service UUID List (without Service Data)
+            // This creates AD Type 0x03 (16-bit Service UUID List)
+            val serviceUuidEntry = ServiceData()
+            serviceUuidEntry.serviceUuid = _cccServiceUuid16bit
+            serviceUuidEntry.serviceData = null  // No data, just UUID in the list
+            advertisementSet.advertiseData.services.add(serviceUuidEntry)
+
+            // Add Service Data with 128-bit UUID
+            // This creates AD Type 0x21 (Service Data - 128-bit UUID)
             // Service Data format: IntentConfiguration (1 byte) + Vehicle Brand Identifier (2+ bytes)
-            // This keeps the total advertisement size within Legacy BLE 31-byte limit
-            val serviceData = ServiceData()
-            serviceData.serviceUuid = _cccServiceUuid16bit
-            serviceData.serviceData = StringHelpers.decodeHex(it.key)
-            advertisementSet.advertiseData.services.add(serviceData)
+            val serviceDataEntry = ServiceData()
+            serviceDataEntry.serviceUuid = _cccServiceDataUuid128bit
+            serviceDataEntry.serviceData = StringHelpers.decodeHex(it.key)
+            advertisementSet.advertiseData.services.add(serviceDataEntry)
 
             // General Data
             advertisementSet.title = it.value
