@@ -27,9 +27,12 @@ class AdvertiseData : Serializable {
             
             services.forEach {
                 if(it.serviceUuid != null){
-                    builder.addServiceUuid(it.serviceUuid)
+                    // Only add Service UUID if there's no Service Data
+                    // addServiceData() already includes the UUID, so adding it separately causes duplication
                     if(it.serviceData != null){
                         builder.addServiceData(it.serviceUuid, it.serviceData)
+                    } else {
+                        builder.addServiceUuid(it.serviceUuid)
                     }
                 }
             }

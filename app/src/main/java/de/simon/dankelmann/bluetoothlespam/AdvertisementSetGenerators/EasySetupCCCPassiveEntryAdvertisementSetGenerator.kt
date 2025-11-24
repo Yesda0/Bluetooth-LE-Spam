@@ -53,8 +53,8 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
             advertisementSet.advertiseSettings.timeout = 0
 
             // Advertising Parameters
-            // Using Extended Advertisement for larger data capacity (>31 bytes)
-            advertisementSet.advertisingSetParameters.legacyMode = false
+            // Using Legacy Mode - data size is now within 31-byte limit after fixing UUID duplication
+            advertisementSet.advertisingSetParameters.legacyMode = true
             advertisementSet.advertisingSetParameters.interval = AdvertisingSetParameters.INTERVAL_MIN
             advertisementSet.advertisingSetParameters.txPowerLevel = TxPowerLevel.TX_POWER_HIGH
             advertisementSet.advertisingSetParameters.primaryPhy = PrimaryPhy.PHY_LE_1M
