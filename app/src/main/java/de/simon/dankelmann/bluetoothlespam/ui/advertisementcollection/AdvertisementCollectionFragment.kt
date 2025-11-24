@@ -142,6 +142,15 @@ class AdvertisementCollectionFragment : Fragment() {
                     ResourcesCompat.getDrawable(resources, R.drawable.heart, context.theme)
                 )
             }
+
+            AdvertisementTarget.ADVERTISEMENT_TARGET_HYUNDAI -> {
+                titleTextView.text = "Hyundai"
+                targetTextView.text = "Target: Hyundai"
+                distanceTextView.text = "Distance: Close"
+                iconImageView.setImageDrawable(
+                    ResourcesCompat.getDrawable(resources, R.drawable.bluetooth, context.theme)
+                )
+            }
         }
 
         // Hookup Events
@@ -171,6 +180,10 @@ class AdvertisementCollectionFragment : Fragment() {
 
                 AdvertisementTarget.ADVERTISEMENT_TARGET_LOVESPOUSE -> {
                     onLovespouseCardViewClicked()
+                }
+
+                AdvertisementTarget.ADVERTISEMENT_TARGET_HYUNDAI -> {
+                    // Hyundai Passive Entry has its own dedicated UI, ignore here
                 }
 
                 else -> {
