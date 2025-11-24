@@ -163,7 +163,7 @@
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 android:text="@string/hyundai_passive_entry_stop"
-                android:backgroundTint="@color/red_normal"
+                android:backgroundTint="@color/log_error"
                 android:enabled="false" />
 
         </LinearLayout>
