@@ -49,11 +49,12 @@ class EasySetupCCCPassiveEntryAdvertisementSetGenerator : IAdvertisementSetGener
             // Advertise Settings
             advertisementSet.advertiseSettings.advertiseMode = AdvertiseMode.ADVERTISEMODE_LOW_LATENCY
             advertisementSet.advertiseSettings.txPowerLevel = TxPowerLevel.TX_POWER_HIGH
-            advertisementSet.advertiseSettings.connectable = true
+            advertisementSet.advertiseSettings.connectable = false
             advertisementSet.advertiseSettings.timeout = 0
 
             // Advertising Parameters
-            advertisementSet.advertisingSetParameters.legacyMode = true
+            // Using Extended Advertisement for larger data capacity (>31 bytes)
+            advertisementSet.advertisingSetParameters.legacyMode = false
             advertisementSet.advertisingSetParameters.interval = AdvertisingSetParameters.INTERVAL_MIN
             advertisementSet.advertisingSetParameters.txPowerLevel = TxPowerLevel.TX_POWER_HIGH
             advertisementSet.advertisingSetParameters.primaryPhy = PrimaryPhy.PHY_LE_1M
