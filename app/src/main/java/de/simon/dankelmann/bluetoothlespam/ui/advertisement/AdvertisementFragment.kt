@@ -189,6 +189,7 @@ class AdvertisementFragment : Fragment(), IAdvertisementServiceCallback, IAdvert
 
             AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_WATCH -> "Easy Setup Watch"
             AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_BUDS -> "Easy Setup Buds"
+            AdvertisementSetType.ADVERTISEMENT_TYPE_EASY_SETUP_CCC_PASSIVE_ENTRY -> "Easy Setup CCC Passive Entry"
 
             AdvertisementSetType.ADVERTISEMENT_TYPE_LOVESPOUSE_PLAY -> "Lovespouse Play"
             AdvertisementSetType.ADVERTISEMENT_TYPE_LOVESPOUSE_STOP -> "Lovespouse Stop"
